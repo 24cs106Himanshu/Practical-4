@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow with FAQs</title>
+    <link rel="stylesheet" href="Prac_4_style.css">
+    <script src="Prac_4_script.js" defer></script>
+</head>
+<body>
+    <div id="theme-switcher-container" style="text-align:right; margin: 16px 32px 0 0;">
+        <button id="theme-switcher" class="theme-btn">🌙 Dark Mode</button>
+    </div>
+    <div id="notification-banner" class="notification-banner">
+        <span id="notification-message">Welcome to the site!</span>
+        <button id="close-banner" class="close-btn">&times;</button>
+    </div>
+    <h1></h1>
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div id="faq-container">
+            <!-- FAQ items will be populated by JavaScript -->
+        </div>
+    </div>
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <img src="valorant-agent-showdown-y8qql57pm156oy8y.jpg" alt="Image 1">
+        </div>
+        <div class="slides fade">
+            <img src="game_wallpaper_thumbnail__cypher_valorant_by_ananttripathi_de98ne1-fullview.jpg" alt="Image 2">
+        </div>
+        <div class="slides fade">
+            <img src="wp10436636.jpg" alt="Image 3">
+        </div>
+        <button id="prev" class="slide-btn" onclick="plusSlides(-1)">&#10094; Prev</button>
+        <button id="next" class="slide-btn" onclick="plusSlides(1)">Next &#10095;</button>
+    </div>
+    <script src="script.js" defer></script>
+    <script>
+        // Notification banner logic
+        document.getElementById('close-banner').onclick = function() {
+            document.getElementById('notification-banner').classList.add('hide');
+        };
+        setTimeout(function() {
+            document.getElementById('notification-banner').classList.add('hide');
+        }, 5000);
+
+        // Theme switcher logic
+        const themeBtn = document.getElementById('theme-switcher');
+        themeBtn.onclick = function() {
+            document.body.classList.toggle('dark-theme');
+            if(document.body.classList.contains('dark-theme')) {
+                themeBtn.textContent = '☀️ Light Mode';
+            } else {
+                themeBtn.textContent = '🌙 Dark Mode';
+            }
+        };
+    </script>
+</body>
+</html>
