@@ -5,7 +5,7 @@
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-            // Wrap around logic
+           
             if (slideIndex > slides.length) {
                 slideIndex = 1;
             }
@@ -64,12 +64,12 @@
 
        
         function createFAQItems() {
-            // Step 1: Get the container where we want to put FAQs
+           
             var container = document.getElementById('faq-container');
             
-            // Step 2: Go through each FAQ one by one
+            
             for(var i = 0; i < faqData.length; i++) {
-                // Step 3: Create HTML for one FAQ item
+                
                 var faqHTML = '';
                 faqHTML = faqHTML + '<div class="faq-item">';
                 faqHTML = faqHTML + '<button class="faq-question" onclick="showHideAnswer(' + i + ')">';
@@ -80,17 +80,16 @@
                 faqHTML = faqHTML + '</div>';
                 faqHTML = faqHTML + '</div>';
                 
-                // Step 4: Add this FAQ to the container
+                
                 container.innerHTML = container.innerHTML + faqHTML;
             }
         }
 
         function showHideAnswer(number) {
-            // Step 1: Find the answer we want to show/hide
+
             var answer = document.getElementById('answer-' + number);
             var question = event.target;
             
-            // Step 2: Check if answer is hidden or shown, then do opposite
             if (answer.classList.contains('active')) {
                 answer.classList.remove('active');
                 question.classList.remove('active');
@@ -100,14 +99,13 @@
             }
         }
 
-        // Notification popup logic
         function showNotification(message, timeout = 5000) {
             var banner = document.getElementById('notification-banner');
             var msgSpan = document.getElementById('notification-message');
             if (!banner || !msgSpan) return;
             msgSpan.textContent = message;
             banner.classList.remove('hide');
-            // Auto-hide after timeout
+            
             setTimeout(function() {
                 banner.classList.add('hide');
             }, timeout);
@@ -119,10 +117,10 @@
             };
         }
 
-        // Initialize everything when page loads
+       
         window.onload = function() {
-            showSlides(); // Start slideshow
-            createFAQItems(); // Create FAQ items
-            // Uncomment below to show notification on page load
-            // showNotification('Welcome to the site!');
+            showSlides(); 
+            createFAQItems(); 
+            
         };
+
